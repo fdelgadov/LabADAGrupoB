@@ -1,6 +1,3 @@
-from typing import final
-
-
 def galeShapley(a1, a2):
   # Este algoritmo garantiza un emparejamiento estable entre los elementos de 2 listas
   # Retona las parejas en un arreglo
@@ -63,18 +60,49 @@ def galeShapley(a1, a2):
   return res
 
 # Test
-a1 = [
-     ["Andy", "Xena", "Wendy", "Yvonne", "Zoe"],
-     ["Beto", "Yvonne", "Zoe", "Xena", "Wendy"],
-     ["Carlo", "Yvonne", "Xena", "Zoe", "Wendy"],
-     ["Denis", "Wendy", "Zoe", "Yvonne", "Xena"]
-     ]
+a1 =  [
+      ["Andy", "Xena", "Wendy", "Yvonne", "Zoe"],
+      ["Beto", "Yvonne", "Zoe", "Xena", "Wendy"],
+      ["Carlo", "Yvonne", "Xena", "Zoe", "Wendy"],
+      ["Denis", "Wendy", "Zoe", "Yvonne", "Xena"],
+      ]
 
-a2 = [
-     ["Wendy", "Carlo", "Denis", "Beto", "Andy"],
-     ["Xena", "Carlo", "Beto", "Andy", "Denis"],
-     ["Yvonne", "Andy", "Beto", "Carlo", "Denis"],
-     ["Zoe", "Denis", "Carlo", "Beto", "Andy"]
-     ]
+a2 =  [
+      ["Wendy", "Carlo", "Denis", "Beto", "Andy"],
+      ["Xena", "Carlo", "Beto", "Andy", "Denis"],
+      ["Yvonne", "Andy", "Beto", "Carlo", "Denis"],
+      ["Zoe", "Denis", "Carlo", "Beto", "Andy"],
+      ]
+print(galeShapley(a1, a2))
 
+a1 =  [
+      ["Yancey", "Amy", "Diane", "Claire", "Bertha", "Erika"],
+      ["Victor", "Bertha", "Amy", "Diane", "Erika", "Claire"],
+      ["Xavier", "Bertha", "Erika", "Claire", "Diane", "Amy"],
+      ["Zeus", "Bertha", "Diane", "Amy", "Erika", "Claire"],
+      ["William", "Diane", "Bertha", "Amy", "Claire", "Erika"],
+      ]
+a2 =  [
+      ["Amy", "Zeus", "Victor", "William", "Yancey", "Xavier"],
+      ["Bertha", "Xavier", "William", "Yancey", "Victor", "Zeus"],
+      ["Claire", "William", "Xavier", "Yancey", "Zeus", "Victor"],
+      ["Diane", "Victor", "Zeus", "Yancey", "Xavier", "William"],
+      ["Erika", "Yancey", "William", "Zeus", "Xavier", "Victor"],
+      ]
+print(galeShapley(a1, a2))
+
+a1 =  [
+      ["William", "Diane", "Bertha", "Amy", "Claire", "Erika"],
+      ["Yancey", "Amy", "Diane", "Claire", "Bertha", "Erika"],
+      ["Xavier", "Bertha", "Erika", "Claire", "Diane", "Amy"],     
+      ["Victor", "Bertha", "Amy", "Diane", "Erika", "Claire"],
+      ["Zeus", "Bertha", "Diane", "Amy", "Erika", "Claire"],
+      ]
+a2 =  [
+      ["Amy", "Zeus", "Victor", "William", "Yancey", "Xavier"],
+      ["Bertha", "Xavier", "William", "Yancey", "Victor", "Zeus"],
+      ["Claire", "William", "Xavier", "Yancey", "Zeus", "Victor"],
+      ["Diane", "Victor", "Zeus", "Yancey", "Xavier", "William"],
+      ["Erika", "Yancey", "William", "Zeus", "Xavier", "Victor"],
+      ]
 print(galeShapley(a1, a2))
