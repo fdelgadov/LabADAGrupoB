@@ -1,4 +1,5 @@
 # Este algoritmo retorna el mayor número de un arreglo
+# Fue implemetando para que sea O(n)
 def greatestNumber(array):
   greatestNumber = array[0]
   for i in array[1:]:
