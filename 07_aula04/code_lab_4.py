@@ -153,3 +153,65 @@ p = 0
 for (i = 1; p <= n; i++) {
     p = p + i;
 }
+
+# Q7: What is the time complexity of
+# i = 1, 2, 4, 8, 16, ..., 2^k
+# El bucle termina para: i >= n
+# 2^k = n
+# k = log_2(n)
+# O(log_2(n))
+for (i = 1; i < n; i = i*2) {
+    statement;
+}
+
+# Q8: What is the time complexity of
+# i = n, n/(2^1), n/(2^2), n/(2^3), ..., n/(2^k)
+# El bucle termina para i < 1
+# n/(2^k) = 1
+# n = 2^k
+# log_2(n) = k
+# O(log_2(n))
+for (i = n; i >= 1; i = i/2) {
+    statement;
+}
+
+# Q9: What is the time complexity of
+# i = 0^2, 1^2, 2^2, 3^3, ..., k^2
+# El bucle termina para i >= n
+# k^2 = n
+# k = n^(1/2)
+# O(n^(1/2))
+for (i = 0; i * i < n; i++) {
+    statement;
+}
+
+# Q10: What is the time complexity of
+# n + n = 2n
+# O(2n) = O(n)
+for (i = 0; i < n; i++) { # n*1=n
+    statement;            # 1
+}
+
+for (j = 0; j < n; j++) { # n*1=n
+    statement;            # 1
+}
+                          # n + n = 2n
+
+# Q11: What is the time complexity of
+# O(log_2(log_2(n)))
+p = 0
+for (i = 1; i < n; i = i * 2) { # O(log_2(n))
+    p++;                        # p = log_2(n)
+}
+
+for (j = 1; j < p; j = j * 2) { # log_2(p) = log_2(log_2(n))
+    statement;
+}
+
+# Q12: What is the time complexity of
+# O(n*log(n))
+for (i = 0; i < n; i++) {           # n*log_2(n) = O(n*log(n))
+    for (j = 1; j < n; j = j * 2) { # log_2(n)*1
+        statement;                  # 1
+    }
+}
