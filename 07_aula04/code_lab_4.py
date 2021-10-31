@@ -85,8 +85,71 @@ def pick_resume(resumes):
     return resumes[0]
 end
 
+# Test
 a = [4, 1, 7, 3, 12]
 print(a)
 every_other(a)
 print(a)
 print(twoSum(a))
+
+## Review of Time Complexity
+## Q1: What is the time complexity of
+## O(n), es un for de i=0 hasta i=n
+for (i = 0; i < n; i++) {   # n*1 = n = O(n)
+    statement;              # 1
+}
+
+## Q2: What is the time complexity of
+## O(n), porque es un for de i=n hasta i=1
+for (i = n; i > 0; i--) { # n
+    statement;            # 1
+}
+
+## Q3: What is the time complexity of
+# i = 0, 2, 4, 6, ...
+# O(n)
+for (i = 0; i < n; i=i+2) { # n/2*1 = n/2 = O(n)
+    statement;              # 1
+}
+
+# Q4: What is the time complexity of
+# O(n^2), porque tiene for anidado
+for (i = 0; i < n; i++) {       # n*n = n^2 = O(n^2)
+    for (j = 0; j < n; j++) {   # n*1 = n
+        statement;              # 1
+    }
+}
+
+# Q5: What is the time complexity of
+# i   j                           iteraciones
+# 0   -                             0
+# 1   0                             1
+# 2   0, 1                          2
+# 3   0, 1, 2                       3
+# ...
+# n   0, ..., (n - 2), (n - 1)      n
+#
+# 0 + 1 + 2 + 3 + ... + n = n*(n + 1) / 2
+# = O(n^2)
+for (i = 0; i < n; i++) {
+    for (j = 0; j < i; j++) {
+        statement;
+    }
+}
+
+# Q6: What is the time complexity of
+# i   p
+# -   0
+# 1   0 + 1
+# 2   0 + 1 + 2
+# 3   0 + 1 + 2 + 3
+# k   0 + 1 + 2 + ... + k = k * (k+1) / 2
+# El bucle termina cuando: p > n
+# k*(k+1)/2 > n
+# k^2 > n
+# k > n^(1/2)
+# O(n^(1/2))
+p = 0
+for (i = 1; p <= n; i++) {
+    p = p + i;
+}

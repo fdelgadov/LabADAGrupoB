@@ -219,7 +219,7 @@ for (i = n; i > 0; i--) {
 
 
 // Q3: What is the time complexity of
-for (i = 0; i < n; i=i+5) {
+for (i = 0; i < n; i=i+2) {
     statement;
 }
 
