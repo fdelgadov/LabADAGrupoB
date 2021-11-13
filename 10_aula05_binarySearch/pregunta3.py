@@ -1,0 +1,26 @@
+# Este algoritmo retorna el menor número de un arreglo ordenado rotado
+# (desplazado)
+# El algoritmo retorna el índice del número en el arreglo
+# Si no encuentra el número retorna -1
+def min(array):
+  left = 0
+  right = len(array) - 1
+  first = array[0]
+  while left < right - 1:
+    mid = left + (right - left) / 2
+    mid = int(mid)
+    if array[mid] > first:
+      left = mid
+    else:
+      right = mid
+  if array[left] < array[right]:
+    return left
+  else:
+    return right
+
+array = [6, 7, 9, 15, 19, 2, 3]
+print(f'min(array): {min(array)}')
+array = [18, 23, 4, 5, 7, 10, 14, 16]
+print(f'min(array): {min(array)}')
+array = [9, 15, 19, 2, 3, 6, 7]
+print(f'min(array): {min(array)}')
