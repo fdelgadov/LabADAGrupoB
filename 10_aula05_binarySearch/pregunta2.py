@@ -1,7 +1,7 @@
 # Enunciado:
 # Encuentre el primer valor mayor o igual que x
 
-# Este algoritmo retorna el primer número mayor o igual que x en el
+# Este algoritmo retorna el índice del primer número mayor o igual que x en el
 # arreglo.
 # Retorna -1 si ningún número es mayor o igual
 
@@ -20,10 +20,17 @@ def firstMajorNumber(array, x):
   mid += 1
   if len(array) <= mid:
     return -1
+  if mid == 1:
+    return 0
   else:
     return mid
 
+# Test
 array = [2, 14, 23, 52, 65]
-print(f'binarySearch(array, 14): {firstMajorNumber(array, 100)}')
+print(array)
+print(f'binarySearch(array, 100): {firstMajorNumber(array, 100)}')
 array = [2, 14, 23, 52, 65, 100, 1233]
-print(f'binarySearch(array, 14): {firstMajorNumber(array, 70)}')
+print(array)
+print(f'binarySearch(array, 70): {firstMajorNumber(array, 70)}')
+print(f'binarySearch(array, 1): {firstMajorNumber(array, 1)}')
+print(f'binarySearch(array, 23): {firstMajorNumber(array, 23)}')
