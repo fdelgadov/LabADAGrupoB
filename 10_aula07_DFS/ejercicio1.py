@@ -1,4 +1,8 @@
 def dfs(array, x, y, color):
+  # Este algoritmo pinta todos los casilleros 0 a partir de un casillero.
+  # El método para el pintado es DFS. Un color esta representado por un caracter.
+  # El algoritmo retorna el arreglo luego de ser pintado.
+
   array[x][y] = color
   dx = [x - 1, x, x + 1, x]
   dy = [y, y + 1, y, y - 1]
