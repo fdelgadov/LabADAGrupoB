@@ -28,9 +28,9 @@ def firstMajorNumber(array, x):
 # Test
 array = [2, 14, 23, 52, 65]
 print(array)
-print(f'binarySearch(array, 100): {firstMajorNumber(array, 100)}')
+print(f'firstMajorNumber(array, 100): {firstMajorNumber(array, 100)}')
 array = [2, 14, 23, 52, 65, 100, 1233]
 print(array)
-print(f'binarySearch(array, 70): {firstMajorNumber(array, 70)}')
-print(f'binarySearch(array, 1): {firstMajorNumber(array, 1)}')
-print(f'binarySearch(array, 23): {firstMajorNumber(array, 23)}')
+print(f'firstMajorNumber(array, 70): {firstMajorNumber(array, 70)}')
+print(f'firstMajorNumber(array, 1): {firstMajorNumber(array, 1)}')
+print(f'firstMajorNumber(array, 23): {firstMajorNumber(array, 23)}')

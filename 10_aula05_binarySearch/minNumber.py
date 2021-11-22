@@ -2,7 +2,7 @@
 # (desplazado)
 # El algoritmo retorna el índice del número en el arreglo
 # Si no encuentra el número retorna -1
-def min(array):
+def minNumber(array):
   if array[0] < array[-1]:
     return 0
 
@@ -22,10 +22,10 @@ def min(array):
     return right
 
 array = [6, 7, 9, 15, 19, 2, 3]
-print(f'min(array): {min(array)}')
+print(f'minNumber(array): {minNumber(array)}')
 array = [18, 23, 4, 5, 7, 10, 14, 16]
-print(f'min(array): {min(array)}')
+print(f'minNumber(array): {minNumber(array)}')
 array = [9, 15, 19, 2, 3, 6, 7]
-print(f'min(array): {min(array)}')
+print(f'minNumber(array): {minNumber(array)}')
 array = [2, 3, 6, 7, 9, 15, 19]
-print(f'min(array): {min(array)}')
+print(f'minNumber(array): {minNumber(array)}')
