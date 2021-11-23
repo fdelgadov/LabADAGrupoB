@@ -10,8 +10,7 @@ def minNumber(array):
   right = len(array) - 1
   first = array[0]
   while left < right - 1:
-    mid = left + (right - left) / 2
-    mid = int(mid)
+    mid = left + (right - left) // 2
     if array[mid] > first:
       left = mid
     else:
