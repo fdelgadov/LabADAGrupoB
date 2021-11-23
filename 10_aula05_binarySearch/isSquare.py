@@ -6,7 +6,7 @@ def isSquare(number):
   left = 0
   right = number
   while left <= right:
-    mid = left + (right - left) / 2
+    mid = left + (right - left) // 2
     mid = int(mid)
     quotient = int(number / mid)
     if quotient == mid:
