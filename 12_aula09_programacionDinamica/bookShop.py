@@ -1,15 +1,14 @@
-#def bookShop(PricePage: list, numBooks: int, totalPrice: int):
+# Book Shop
+
 def bookShop():
   """
-  numBooks = int(input())
-  totalPrice = int(input())
+  Este programa resuelve el siguiente ejercicio: Book Shop
+  Link: https://cses.fi/problemset/task/1158
 
-  prices = [int(input()) for x in range(numBooks)]
-  pages = [int(input()) for x in range(numBooks)]
-
-  #print(f'{numBooks} {totalPrice}\n{prices}\n{pages}')
+  Este programa retorna el máximo número de páginas que se pueden conseguir
+  comprando libros dados el precio y páginas de los libros disponibles y la
+  cantidad de dinero disponible.
   """
-  #"""
   inputLine = input()
   inputArray = inputLine.split()
   inputArray = [int(x) for x in inputArray]
@@ -25,13 +24,10 @@ def bookShop():
   inputArray = inputLine.split()
   inputArray = [int(x) for x in inputArray]
   pages = inputArray
-  #"""
 
   bag = [[0 for y in range(totalPrice + 1)] for x in range(numBooks + 1)]
 
   for i in range(1, len(bag)):
-    #price = PricePage[0][i - 1]
-    #page = PricePage[1][i - 1]
     price = prices[i - 1]
     page = pages[i - 1]
 
@@ -55,9 +51,24 @@ def display(a):
 
 # Test
 """
-Input
+Input:
 4 10
 4 8 5 3
 5 12 8 1
 """
 print(f'bookShop(): {bookShop()}')
+
+# Otros input
+"""
+4 10
+4 8 5 3
+5 12 8 1
+
+10 10
+1 2 10 6 5 1 7 4 10 4
+6 3 8 1 7 3 8 6 5 6
+
+4 10
+4 8 6 3
+5 12 8 1
+"""
