@@ -49,6 +49,8 @@ def display(a):
   for i in a:
     print(i)
 
+print(bookShop())
+
 # Test
 """
 Input:
@@ -56,7 +58,7 @@ Input:
 4 8 5 3
 5 12 8 1
 """
-print(f'bookShop(): {bookShop()}')
+# print(f'bookShop(): {bookShop()}')
 
 # Otros input
 """
