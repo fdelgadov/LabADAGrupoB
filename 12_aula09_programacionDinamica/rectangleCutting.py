@@ -1,4 +1,14 @@
 def rectangleCutting():
+  """
+  Este programa resuelve el siguiente ejercicio: Rectangle Cutting
+  Link: https://cses.fi/problemset/task/1744
+
+  Dado las dimensiones de un rectángulo, el programa retorna el número de 
+  cortes minimos para obtener al final sólo cuadrados. Cada corte consisten 
+  en elegir un rectángulo y dividirlo en dos rectángulos.
+
+  El programa imprime el número mínimo de cortes requeridos
+  """
   inputArray = [int(x) for x in input().split()]
 
   # Rectángulo
@@ -8,7 +18,7 @@ def rectangleCutting():
   print(recRectCutting(a, b))
 
 def recRectCutting(a, b):
-  print(f'{a} {b}')
+  # Parte recursiva del programa
   res = 0
   if a == b:
     return res
@@ -17,11 +27,11 @@ def recRectCutting(a, b):
     aux = a
     a = b
     b = aux
-
+  
   n = mcd(a, b)
   a = a / n
   b = b / n
-  
+
   if a - b == 1:
     if a == 2:
       return 1
@@ -37,6 +47,7 @@ def recRectCutting(a, b):
   return res
 
 def mcd(a, b):
+  # Este programa retorna el M.C.D de dos números
   if b == 0:
     return a
   else:
