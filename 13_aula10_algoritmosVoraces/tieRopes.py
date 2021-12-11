@@ -16,27 +16,25 @@ def tieRopes(K, A: list):
   lista A, ya que solo pueden ser unidas si son adyacentes. Cada vez que es
   sacada una cuerda >= K, es contada para el total de la respuesta final.
   """
+  # Numero de cuerdas
+  length = len(A)
 
   # Número de cuerdas >= K
   ropes = 0
 
+  #Tamaño de cuerda atada
+  tiedRope = 0 # Cuerda atada vacía
+
   # Se evalúan todas las cuerdas, menos la última
-  while len(A) > 1:
-    # Se saca la primera cuerda
-    actual = A.pop(0)
+  for i in range(length):
+    # Se une a cuerda atada
+    tiedRope += A[i]
 
-    # Se compara la longitud de la cuerda con K
-    if actual < K:
-      # Se une la cuerda sacada con la siguiente; forman una nueva cuerda
-      A.insert(0, actual + A.pop(0))
-    else:
-      # La cuerda es >= K, entonces aumenta el contador
+    # Se compara la longitud de la cuerda atada con K
+    if tiedRope >= K:
       ropes += 1
+      tiedRope = 0
   
-  # Se evalúa la última cuerda
-  if A[0] >= K:
-    ropes += 1
-
   # Retorna la respuesta
   return ropes
 
