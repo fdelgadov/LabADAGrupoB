@@ -1,45 +1,66 @@
 # Bank Queue
+import heapq
+
 def bankQueue():
   inputArray = [int(x) for x in input().split()]
   N = inputArray[0]
   T = inputArray[1]
 
-  amounts = []
-  times = []
-  queue = [x for x in range(N)]
-
-  maxAmount = 0
+  amounts = [[] for i in range(T)]
+  waitMore = []
 
   for i in range(N):
     inputArray = [int(x) for x in input().split()]
-    amounts.append(inputArray[0])
-    times.append(inputArray[1])
+    amount = inputArray[0]
+    time = inputArray[1]
+    if time < T:
+      heapq.heappush(amounts[time], amount)
+    else:
+      heapq.heappush(waitMore, amount)
 
-  for time in range(T):
-    auxQueue = []
-    auxAmount = 0
-    auxMax = 0
-    auxMaxIdx = -1
+  extra = 1
+  maxAmount = 0
+  time = 0
+  while time < T:
+    while extra > 0:
+      if len(amounts[time]) == 0:
+        extra += 1
+        break
 
-    for i in queue:
-      if times[i] == time:
-        auxAmount = max(auxAmount, amounts[i])
+      # Selección de monto actual
+      auxList = amounts[time]
+      if len(waitMore) > 0 and amounts[time][-1] < waitMore[-1]:
+        auxList = waitMore
+
+      # Menor monto de tiempo superior
+      hasMin = -1
+      minAmount = float('inf')
+      for i in range(time + 1, T):
+        if len(amounts[i]) == 0 and hasMin == -1:
+          break        
+        #elif len(amounts[i]) > 1:
+        elif len(amounts[i]) > 0:
+          if amounts[i][0] < minAmount:
+            minAmount = amounts[i][0]
+            hasMin = i
+      
+      # Limpiar listas
+      if hasMin != -1:
+        if auxList[-1] >= minAmount or len(amounts[hasMin]) == 1:
+          maxAmount += auxList.pop()
+          if len(amounts[hasMin]) > 1:
+            amounts[hasMin].pop(0)
+        else:
+          maxAmount += amounts[hasMin].pop(0)
       else:
-        auxQueue.append(i)
-        if auxMax < amounts[i]:
-          auxMax = amounts[i]
-          auxMaxIdx = i
+        maxAmount += auxList.pop()
 
-    if auxAmount != 0:
-      maxAmount += auxAmount
-    elif auxMax != 0:
-      maxAmount += auxMax
-      auxQueue.remove(auxMaxIdx)
-      auxMax = 0
-      auxMaxIdx = -1
+      extra -= 1
 
-    queue = auxQueue
-  
+    if extra == 0:
+      extra = 1
+    time += 1
+
   return maxAmount
 
 # Main
