@@ -1,6 +1,20 @@
 # MaxNonoverlappingSegments
 
 def solution(A, B):
+  """
+  Este algoritmo resuelve el problema MaxNonoverlappingSegments:
+  Link: https://app.codility.com/programmers/lessons/16-greedy_algorithms/max_nonoverlapping_segments/
+
+  Este programa retorna el número máximo de segmentos no superpuestos. Los 
+  segmentos están denotados por las listas A y B, donde A contiene el punto 
+  origen de cada segmento y B contiene el puno final de cada segmento.
+
+  Solución:
+  Deben contarse los segmentos de modo que cada segmeneto no contenga más de un segmento superpuesto.
+  De lo contrario dicho segmento evitará que se cuenten 2 o más segmentos. Una vez seleccionado un 
+  segemento para contar, si hubiese un segmento superpuesto, debe ser eliminado de la lista, porque
+  el problema no permite que sea tomado en cuenta.
+  """
   N = len(A)
   maxSegments = 0
   segments = [x for x in range(N)]
