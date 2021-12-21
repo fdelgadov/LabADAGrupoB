@@ -10,9 +10,10 @@ def groupAnagrams(strs):
         continue
 
       group = True
+      aux = word
       for ch in ana[0]:
-        if ch in word:
-          continue
+        if ch in aux:
+          aux = aux.replace(ch, "", 1)
         else:
           group = False
           break
@@ -34,4 +35,7 @@ strs = [""]
 print(groupAnagrams(strs))
 
 strs = ["a"]
+print(groupAnagrams(strs))
+
+strs = ["ddddddddddg","dgggggggggg"]
 print(groupAnagrams(strs))
